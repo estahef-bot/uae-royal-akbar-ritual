@@ -661,3 +661,14 @@ html[lang="zh"] .hero h1, html[lang="ja"] .hero h1, html[lang="ko"] .hero h1,
 html[lang="zh"] h2, html[lang="ja"] h2, html[lang="ko"] h2 {
   font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', var(--serif-display);
 }
+
+/* Stage imagery */
+.timeline-item .stage-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+  display: block;
+}

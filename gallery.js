@@ -40,7 +40,7 @@
       categoryLabel: 'Culture',
       title: 'Traditional Artifacts',
       date: '2026-03-14',
-      description: 'The dallah, incense burner and khanjar: objects of hospitality and honour central to Emirati ceremonial life.'
+      description: 'Ceremonial gifts of state: a gold filigree casket of traditional halwa presented alongside an inscribed ceremonial sword — emblems of Emirati hospitality, honour and heritage.'
     },
     {
       src: 'assets/gallery/community-unity.jpg',

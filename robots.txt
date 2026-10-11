@@ -1,0 +1,5 @@
+# This site is intentionally private.  This is a crawler preference, not an
+# access-control boundary; the Vercel/Cloudflare controls in SECURITY.md are
+# required to prevent direct requests.
+User-agent: *
+Disallow: /

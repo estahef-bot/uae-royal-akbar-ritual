@@ -18,6 +18,7 @@ test("Vercel headers deny indexing and reduce browser attack surface", async () 
   assert.match(headers["x-robots-tag"], /noindex/);
   assert.equal(headers["x-content-type-options"], "nosniff");
   assert.equal(headers["x-frame-options"], "DENY");
+  assert.equal(headers["cache-control"], "private, no-store, max-age=0");
   assert.match(headers["content-security-policy"], /frame-ancestors 'none'/);
   assert.match(headers["content-security-policy"], /connect-src 'none'/);
 });

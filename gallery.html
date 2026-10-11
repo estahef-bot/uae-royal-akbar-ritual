@@ -3,257 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery — Moments from the Tradition | UAE Ministry of Culture</title>
-<meta name="description" content="A visual journey through the Royal Akbar Ritual, capturing the heritage, people and meaningful moments that define this proud Emirati tradition.">
+<title>Gallery — Moments from the Tradition | Royal Akbar Ritual</title>
+<meta name="description" content="A visual journey through the Royal Akbar Ritual — heritage, people and moments from this Emirati cultural marriage tradition. Design concept, not an official publication.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="polish.css">
 </head>
 <body class="gallery-page">
 
-<a class="skip-link" href="#gallery-main">Skip to gallery content</a>
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="16.2" y1="16.2" x2="21" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5" y1="5" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19" y2="19"/><line x1="5" y1="19" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19" y2="5"/></g></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="10" r="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M4 17l5.5-5.5 3 3L18 9l2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="8.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15.2 13.5c2.6.2 4.6 2 4.6 4.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5c2-1 5-1 8 .5 3-1.5 6-1.5 8-.5v13c-2-1-5-1-8 .5-3-1.5-6-1.5-8-.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><line x1="12" y1="6" x2="12" y2="19" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.5 6.5 19 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-social-1" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.3" cy="7.7" r="0.9" fill="currentColor"/></symbol>
+    <symbol id="i-social-2" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-social-3" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 9.5v5l4.3-2.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-social-4" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8.2" cy="8.2" r="1.1" fill="currentColor"/><line x1="8.2" y1="11" x2="8.2" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M11.5 16v-3.2c0-1.3 1-2.2 2.2-2.2 1.1 0 1.8.8 1.8 2.1V16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
 
-<!-- ============ GOVERNMENT UTILITY BAR ============ -->
-<div class="gov-bar">
-  <div class="gov-bar-inner">
-    <div class="gov-bar-left">
-      <span class="gov-flag" aria-hidden="true">
-        <span class="gf-red"></span>
-        <span class="gf-stack"><i class="gf-green"></i><i class="gf-white"></i><i class="gf-black"></i></span>
+<!-- Ministry utility bar -->
+<div class="gutil-bar">
+  <div class="container gutil-inner">
+    <div class="gutil-left">
+      <span class="flag-strip">
+        <span class="r"></span>
+        <span class="stack"><span class="g"></span><span class="w"></span><span class="k"></span></span>
       </span>
-      <span class="gov-entity">UAE Government</span>
-      <span class="gov-sep" aria-hidden="true"></span>
-      <span class="gov-tagline">A More Prosperous Nation</span>
+      <span>Ministry of Culture &middot; UAE Cabinet</span>
     </div>
-
-    <div class="gov-bar-right">
-      <button type="button" class="gov-btn gov-lang" id="lang-toggle" lang="ar" aria-label="Switch to Arabic">العربية</button>
-
-      <div class="gov-textsize" role="group" aria-label="Text size">
-        <button type="button" class="gov-btn ts-sm" data-textsize="sm" aria-label="Small text">A</button>
-        <button type="button" class="gov-btn ts-md is-active" data-textsize="md" aria-label="Default text size" aria-pressed="true">A</button>
-        <button type="button" class="gov-btn ts-lg" data-textsize="lg" aria-label="Large text">A</button>
+    <div class="gutil-right">
+      <a href="#" class="gutil-lang">العربية</a>
+      <div class="gutil-fontsize" role="group" aria-label="Text size">
+        <button type="button" data-size="sm" aria-label="Small text">A</button>
+        <button type="button" data-size="md" class="active" aria-label="Default text">A</button>
+        <button type="button" data-size="lg" aria-label="Large text">A</button>
       </div>
-
-      <button type="button" class="gov-btn gov-icon" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+      <button type="button" class="gutil-theme" id="gThemeBtn" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg width="16" height="16"><use href="#i-moon"/></svg>
       </button>
-
-      <form class="gov-search" role="search" onsubmit="return false;">
-        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 1 0 4.9 14.32l5.39 5.39 1.42-1.42-5.39-5.39A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z"/></svg>
-        <input type="search" id="gov-search-input" placeholder="Search..." aria-label="Search the site">
-      </form>
+      <label class="gutil-search">
+        <svg width="15" height="15"><use href="#i-search"/></svg>
+        <input type="search" id="gUtilSearch" placeholder="Search…" aria-label="Site search">
+      </label>
     </div>
   </div>
 </div>
 
-<!-- ============ MAIN NAVIGATION ============ -->
-<header class="gov-header" id="top">
-  <div class="gov-header-inner">
-
-    <a class="gov-brand" href="index.html">
-      <img src="assets/UAE-emblem.webp" alt="" class="gov-brand-emblem" aria-hidden="true">
-      <span class="gov-brand-text">
-        <span class="gbt-country">United Arab Emirates</span>
-        <span class="gbt-ministry">Ministry of Culture</span>
-        <span class="gbt-arabic" lang="ar">وزارة الثقافة</span>
+<!-- Header / Nav -->
+<header class="site-header gallery-header">
+  <div class="container nav-row">
+    <a href="index.html#top" class="brand">
+      <span class="emblem">AR</span>
+      <span class="brand-text">
+        <span class="eyebrow">United Arab Emirates</span>
+        <span class="name">Ministry of Culture</span>
       </span>
     </a>
-
-    <button class="gov-nav-toggle" id="gov-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="gov-nav">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
-    <nav class="gov-nav" id="gov-nav" aria-label="Primary">
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html#top">Home</a></li>
         <li><a href="index.html#about">About the Ritual</a></li>
         <li><a href="index.html#ceremony">The Ceremony</a></li>
         <li><a href="index.html#significance">Cultural Significance</a></li>
-        <li><a href="gallery.html" class="is-active" aria-current="page">Gallery</a></li>
+        <li><a href="gallery.html" class="gnav-active" aria-current="page">Gallery</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
-
-    <a class="gov-cta" href="index.html#about">
-      Explore UAE Culture
-      <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M13.2 5.6 19.6 12l-6.4 6.4-1.4-1.42L15.76 13H4v-2h11.76l-4-3.98 1.44-1.42Z"/></svg>
-    </a>
+    <a href="index.html#about" class="btn btn-primary gnav-cta">Explore the Heritage <svg width="14" height="14"><use href="#i-arrow"/></svg></a>
   </div>
 </header>
 
-<!-- ============ BREADCRUMB ============ -->
-<nav class="crumb" aria-label="Breadcrumb">
-  <div class="crumb-inner">
-    <ol>
-      <li><a href="index.html">Home</a></li>
-      <li aria-hidden="true" class="crumb-sep">/</li>
-      <li><a href="index.html#about">Royal Akbar Ritual</a></li>
-      <li aria-hidden="true" class="crumb-sep">/</li>
-      <li aria-current="page">Gallery</li>
-    </ol>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<section class="g-hero">
-  <div class="g-hero-inner">
-
-    <div class="g-hero-copy">
-      <p class="g-eyebrow"><span class="eyebrow-rule" aria-hidden="true"></span>Gallery</p>
-      <h1>Moments from the<br>Tradition</h1>
-      <p class="g-hero-lede">A visual journey through the Royal Akbar Ritual, capturing the heritage,
-        people and meaningful moments that define this proud Emirati tradition.</p>
-
-      <dl class="g-stats">
-        <div class="g-stat">
-          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M21 5H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1Zm-1 11.2-4.3-4.3-3 3-3.1-3.1L4 17V7h16v9.2ZM8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg>
-          <div><dt>150+</dt><dd>Photos</dd></div>
-        </div>
-        <div class="g-stat">
-          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/></svg>
-          <div><dt>Heritage &amp; People</dt><dd>Portraits</dd></div>
-        </div>
-        <div class="g-stat">
-          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-          <div><dt>UAE Traditions</dt><dd>Documented</dd></div>
-        </div>
-        <div class="g-stat">
-          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm0 18H6V4h2v8l2.5-1.8L13 12V4h5v16Z"/></svg>
-          <div><dt>Our Living History</dt><dd>Archive</dd></div>
-        </div>
-      </dl>
-    </div>
-
-    <div class="g-hero-media">
-      <img src="assets/gallery/hero-heritage.jpg"
-           alt="Emirati men in traditional dress before a historic fort, with a falcon perched on a gloved hand">
-      <span class="g-hero-scrim" aria-hidden="true"></span>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ GALLERY ============ -->
-<main id="gallery-main">
-
-  <!-- Controls -->
-  <div class="g-controls">
-    <div class="g-controls-inner">
-
-      <div class="g-filters" role="tablist" aria-label="Filter gallery by category">
-        <button type="button" class="g-chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="ceremony">Ceremony</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="royal-family">Royal Family</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="people">People</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="traditions">Traditions</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="culture">Cultural Heritage</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="documents">Documents</button>
-        <button type="button" class="g-chip" role="tab" aria-selected="false" data-filter="locations">Locations</button>
-      </div>
-
-      <div class="g-tools">
-        <div class="g-search">
-          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 1 0 4.9 14.32l5.39 5.39 1.42-1.42-5.39-5.39A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z"/></svg>
-          <label class="sr-only" for="gallery-search">Search gallery</label>
-          <input type="search" id="gallery-search" placeholder="Search gallery...">
-        </div>
-
-        <div class="g-sort">
-          <label class="sr-only" for="gallery-sort">Sort gallery</label>
-          <select id="gallery-sort">
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-            <option value="az">Title (A–Z)</option>
-            <option value="za">Title (Z–A)</option>
-          </select>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Grid -->
-  <section class="g-grid-wrap" aria-label="Gallery images">
-    <div class="g-grid-inner">
-      <p class="g-resultcount" id="g-resultcount" role="status" aria-live="polite"></p>
-      <div class="g-grid" id="g-grid"></div>
-      <p class="g-empty" id="g-empty" hidden>No images match your search. Try a different keyword or category.</p>
-
-      <!-- Pagination -->
-      <nav class="g-pagination" id="g-pagination" aria-label="Gallery pagination"></nav>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ LIGHTBOX ============ -->
-<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
-  <div class="lb-backdrop" data-lb-close></div>
-
-  <div class="lb-shell" role="document">
-    <button type="button" class="lb-close" data-lb-close aria-label="Close image viewer">
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.3 19.71 2.89 18.3 9.17 12 2.89 5.71 4.3 4.3l6.29 6.28 6.3-6.28Z"/></svg>
-    </button>
-
-    <button type="button" class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M15.4 5.6 9 12l6.4 6.4 1.4-1.42L11.83 12l4.97-4.98Z"/></svg>
-    </button>
-
-    <figure class="lb-figure">
-      <div class="lb-imgwrap"><img id="lb-img" src="" alt=""></div>
-      <figcaption class="lb-caption">
-        <p class="lb-cat" id="lb-cat"></p>
-        <h2 class="lb-title" id="lb-title"></h2>
-        <p class="lb-desc" id="lb-desc"></p>
-        <p class="lb-counter" id="lb-counter"></p>
-      </figcaption>
-    </figure>
-
-    <button type="button" class="lb-nav lb-next" id="lb-next" aria-label="Next image">
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8.6 5.6 15 12l-6.4 6.4-1.4-1.42L12.17 12 7.2 7.02Z"/></svg>
-    </button>
+<!-- Breadcrumb -->
+<div class="gbreadcrumb">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <a href="index.html#top">Home</a>
+      <svg width="13" height="13"><use href="#i-chevron"/></svg>
+      <a href="index.html#top">Royal Akbar Ritual</a>
+      <svg width="13" height="13"><use href="#i-chevron"/></svg>
+      <span aria-current="page">Gallery</span>
+    </nav>
   </div>
 </div>
 
-<!-- ============ FOOTER ============ -->
-<footer class="g-footer">
-  <div class="g-footer-inner">
-
-    <div class="gf-brand">
-      <img src="assets/UAE-emblem.webp" alt="" class="gf-emblem" aria-hidden="true">
-      <div>
-        <p class="gf-country">United Arab Emirates</p>
-        <p class="gf-ministry">Ministry of Culture</p>
-        <p class="gf-arabic" lang="ar">وزارة الثقافة</p>
+<!-- Gallery hero -->
+<section class="ghero">
+  <div class="container ghero-grid">
+    <div class="ghero-text">
+      <p class="ghero-eyebrow">Gallery</p>
+      <h1>Moments from the Tradition</h1>
+      <p class="ghero-desc">A visual journey through the Royal Akbar Ritual, capturing the heritage, people and meaningful moments that define this proud Emirati tradition.</p>
+      <div class="ghero-stats">
+        <div class="gstat"><svg width="18" height="18"><use href="#i-photo"/></svg><span><strong>8</strong> Collections</span></div>
+        <div class="gstat"><svg width="18" height="18"><use href="#i-people"/></svg><span>Heritage &amp; People</span></div>
+        <div class="gstat"><svg width="18" height="18"><use href="#i-pin"/></svg><span>UAE Traditions</span></div>
+        <div class="gstat"><svg width="18" height="18"><use href="#i-book"/></svg><span>Our Living History</span></div>
       </div>
     </div>
-
-    <nav class="gf-links" aria-label="Footer">
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Accessibility</a></li>
-        <li><a href="#">Sitemap</a></li>
-      </ul>
-    </nav>
-
-    <div class="gf-social">
-      <p class="gf-motto">Culture Unites Us</p>
-      <ul>
-        <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.42.46.66.26 1.22.6 1.77 1.16.56.55.9 1.11 1.16 1.77.24.63.41 1.36.46 2.42.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.46 2.42a4.9 4.9 0 0 1-1.16 1.77c-.55.56-1.11.9-1.77 1.16-.63.24-1.36.41-2.42.46-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.42-.46a4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77c-.24-.63-.41-1.36-.46-2.42C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.46-2.42.26-.66.6-1.22 1.16-1.77.55-.56 1.11-.9 1.77-1.16.63-.24 1.36-.41 2.42-.46C8.94 2.01 9.28 2 12 2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.5.2-1.86.34-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.36-.3.88-.34 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.2 1.5.34 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.36.14.88.3 1.86.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.36.3-.88.34-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.2-1.5-.34-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.36-.14-.88-.3-1.86-.34-1.05-.05-1.37-.06-4.04-.06Zm0 3.06a5.14 5.14 0 1 1 0 10.28 5.14 5.14 0 0 1 0-10.28Zm0 1.8a3.34 3.34 0 1 0 0 6.68 3.34 3.34 0 0 0 0-6.68Zm5.34-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></a></li>
-        <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M17.53 3H20.5l-6.49 7.42L21.64 21h-5.97l-4.68-6.12L5.63 21H2.66l6.94-7.93L2.36 3h6.12l4.23 5.6L17.53 3Zm-1.04 16.2h1.65L7.6 4.72H5.83l10.66 14.48Z"/></svg></a></li>
-        <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M23 12s0-3.4-.43-5.03a2.6 2.6 0 0 0-1.84-1.85C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.73.42a2.6 2.6 0 0 0-1.84 1.85C1 8.6 1 12 1 12s0 3.4.43 5.03c.24.9.94 1.6 1.84 1.85 1.63.42 8.73.42 8.73.42s7.1 0 8.73-.42a2.6 2.6 0 0 0 1.84-1.85C23 15.4 23 12 23 12ZM9.75 15.27V8.73L15.5 12l-5.75 3.27Z"/></svg></a></li>
-        <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M6.94 5.5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.25 8.75h3.5V21h-3.5V8.75Zm5.75 0h3.36v1.67h.05c.47-.85 1.6-1.75 3.3-1.75 3.53 0 4.19 2.2 4.19 5.07V21h-3.5v-5.6c0-1.33-.03-3.05-1.9-3.05-1.9 0-2.2 1.45-2.2 2.95V21H9V8.75Z"/></svg></a></li>
-      </ul>
+    <div class="ghero-image">
+      <img src="assets/royal-falcon.jpg" alt="Traditional Emirati falconry, a symbol of heritage">
+      <div class="ghero-overlay"></div>
     </div>
-
   </div>
+</section>
 
-  <div class="g-footer-base">
-    <div class="g-footer-base-inner">
-      <span>&copy; <span id="gyear"></span> Ministry of Culture, United Arab Emirates. Design concept — not an official publication.</span>
-      <span>Heritage Preservation Programme</span>
+<!-- Filters / search / sort -->
+<section class="gcontrols">
+  <div class="container gcontrols-inner">
+    <div class="gfilters" role="group" aria-label="Filter gallery by category">
+      <button type="button" class="gfilter active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="gfilter" data-filter="ceremony" aria-pressed="false">Ceremony</button>
+      <button type="button" class="gfilter" data-filter="traditions" aria-pressed="false">Traditions</button>
+      <button type="button" class="gfilter" data-filter="people" aria-pressed="false">People</button>
+      <button type="button" class="gfilter" data-filter="culture" aria-pressed="false">Culture</button>
+      <button type="button" class="gfilter" data-filter="documents" aria-pressed="false">Documents</button>
+      <button type="button" class="gfilter" data-filter="heritage" aria-label="Filter heritage" aria-pressed="false">Heritage</button>
     </div>
+    <div class="gtools"><button type="button" id="gSlideshowToggle" class="slideshow-toggle" aria-pressed="false">Pause slideshow</button>
+      <label class="gsearch-field">
+        <svg width="15" height="15"><use href="#i-search"/></svg>
+        <input type="search" id="gSearch" placeholder="Search gallery…" aria-label="Search gallery">
+      </label>
+      <select id="gSort" aria-label="Sort gallery">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="az">Title A–Z</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery grid -->
+<section class="ggallery">
+  <div class="container">
+    <div class="ggrid" id="gGrid">
+
+      <article class="gcard" data-category="ceremony" data-title="Royal Gathering" data-images="assets/royal gathering 1.jpeg|assets/royal gathering 2.jpeg|assets/royal gathering 3.jpeg" data-date="2026-01-08" data-desc="Elders and family members gather in counsel to open the stages of the Akbar Ritual.">
+        <button class="gcard-media" aria-label="View Royal Gathering">
+          <img src="assets/royal gathering 1.jpeg" alt="Men in traditional Emirati attire in conversation" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Ceremony</span>
+            <h3 class="gcard-title">Royal Gathering</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Royal Gathering"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="traditions" data-title="Heritage Attire" data-images="assets/heritage attire 1.jpeg|assets/heritage attire 2.jpeg|assets/heritage attire 3.jpeg|assets/heritage attire 4.jpeg" data-date="2026-01-06" data-desc="Traditional dress carries symbolism passed through generations of Emirati families.">
+        <button class="gcard-media" aria-label="View Heritage Attire">
+          <img src="assets/heritage attire 1.jpeg" alt="Woman in elegant traditional abaya and hijab" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Traditions</span>
+            <h3 class="gcard-title">Heritage Attire</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Heritage Attire"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="documents" data-title="Official Documentation" data-date="2026-01-04" data-desc="The marriage contract is formalised before witnesses as part of the Al Milcha stage.">
+        <button class="gcard-media" aria-label="View Official Documentation">
+          <img src="assets/marriage contract.jpeg" alt="Hands signing a formal document" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Documents</span>
+            <h3 class="gcard-title">Official Documentation</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Official Documentation"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="culture" data-title="Traditional Artifacts" data-images="assets/Traditional artifact 1.jpeg|assets/traditional artifact 2.jpeg" data-date="2026-01-02" data-desc="An ornate Omani halwa gift box and a decorative Emirati sword celebrate the region's hospitality and craftsmanship.">
+        <button class="gcard-media" aria-label="View Traditional Artifacts">
+          <img src="assets/Traditional artifact 1.jpeg" alt="Ornate Omani halwa gift box and a decorative Emirati sword" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Culture</span>
+            <h3 class="gcard-title">Traditional Artifacts</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Traditional Artifacts"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="people" data-title="Community and Unity" data-images="assets/community and unity 1.jpeg|assets/community and unity 2.jpeg|assets/community and unity 3.jpeg|assets/community and unity 4.jpeg" data-date="2025-12-30" data-desc="Henna adornment reflects the bonds shared between families during the ritual.">
+        <button class="gcard-media" aria-label="View Community and Unity">
+          <img src="assets/community and unity 1.jpeg" alt="Hands adorned with henna and gold rings" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">People</span>
+            <h3 class="gcard-title">Community and Unity</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Community and Unity"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="heritage" data-title="Generations Together" data-images="assets/generations together 1.jpeg|assets/generations together 2.jpeg|assets/generations together 3.jpeg" data-date="2025-12-27" data-desc="The ritual connects elders and the young, carrying tradition forward.">
+        <button class="gcard-media" aria-label="View Generations Together">
+          <img src="assets/generations together 1.jpeg" alt="An elder's hand and a child's hand together" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Heritage</span>
+            <h3 class="gcard-title">Generations Together</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Generations Together"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="traditions" data-title="The Royal Falcon" data-images="assets/the royal falcon 1.jpeg|assets/the royal falcon 2.jpeg|assets/the royal falcon 3.jpeg|assets/the royal falcon 4.jpeg" data-date="2025-12-22" data-desc="Falconry remains one of the most enduring symbols of Emirati heritage.">
+        <button class="gcard-media" aria-label="View The Royal Falcon">
+          <img src="assets/the royal falcon 1.jpeg" alt="A hooded falcon, a symbol of Emirati heritage" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Traditions</span>
+            <h3 class="gcard-title">The Royal Falcon</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open The Royal Falcon"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+      <article class="gcard" data-category="heritage" data-title="Symbols of the Nation" data-images="assets/symbols of the nation 1.jpeg|assets/symbols of the nation 2.jpeg|assets/symbols of the nation 3.jpeg|assets/symbols of the nation 4.jpeg|assets/symbols of the nation 5.jpeg" data-date="2025-12-18" data-desc="The colours of the Emirates fly over every stage of the celebration.">
+        <button class="gcard-media" aria-label="View Symbols of the Nation">
+          <img src="assets/symbols of the nation 1.jpeg" alt="The flag of the United Arab Emirates" loading="lazy">
+        </button>
+        <div class="gcard-body">
+          <div class="gcard-text">
+            <span class="gcard-cat">Locations</span>
+            <h3 class="gcard-title">Symbols of the Nation</h3>
+          </div>
+          <button class="gcard-arrow" aria-label="Open Symbols of the Nation"><svg width="16" height="16"><use href="#i-arrow"/></svg></button>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="gempty" id="gEmpty" hidden>No photos match your search or filter.</p>
+
+    <nav class="gpagination" id="gPagination" aria-label="Gallery pages">
+      <button type="button" class="gpage-nav" id="gPrev" aria-label="Previous page"><svg width="15" height="15"><use href="#i-chevron" style="transform:scaleX(-1);transform-origin:center"/></svg></button>
+      <div class="gpage-numbers" id="gPageNumbers"></div>
+      <button type="button" class="gpage-nav" id="gNext" aria-label="Next page"><svg width="15" height="15"><use href="#i-chevron"/></svg></button>
+    </nav>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="glightbox" id="gLightbox" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="glb-backdrop" id="gLbBackdrop"></div>
+  <div class="glb-shell">
+    <button type="button" class="glb-close" id="gLbClose" aria-label="Close viewer"><svg width="20" height="20"><use href="#i-close"/></svg></button>
+    <button type="button" class="glb-nav glb-prev" id="gLbPrev" aria-label="Previous image"><svg width="20" height="20"><use href="#i-chevron" style="transform:scaleX(-1);transform-origin:center"/></svg></button>
+    <figure class="glb-content">
+      <img id="gLbImage" src="" alt="">
+      <figcaption class="glb-info">
+        <span class="glb-cat" id="gLbCat"></span>
+        <h3 id="gLbTitle"></h3>
+        <p id="gLbDesc"></p>
+        <span class="glb-counter" id="gLbCounter"></span><button type="button" class="slideshow-toggle" id="gLbPlay" aria-pressed="false">Pause slideshow</button>
+      </figcaption>
+    </figure>
+    <button type="button" class="glb-nav glb-next" id="gLbNext" aria-label="Next image"><svg width="20" height="20"><use href="#i-chevron"/></svg></button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="gfooter">
+  <div class="container gfooter-inner">
+    <div class="gfooter-brand">
+      <span class="gfooter-name">United Arab Emirates</span>
+      <span class="gfooter-sub">Ministry of Culture</span>
+      <span class="gfooter-ar">وزارة الثقافة</span>
+    </div>
+    <ul class="gfooter-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Accessibility</a></li>
+      <li><a href="index.html#top">Sitemap</a></li>
+    </ul>
+    <div class="gfooter-right">
+      <span class="gfooter-tagline">Culture Unites Us</span>
+      <div class="gfooter-social">
+        <a href="#" aria-label="Social profile"><svg width="17" height="17"><use href="#i-social-1"/></svg></a>
+        <a href="#" aria-label="Social profile"><svg width="17" height="17"><use href="#i-social-2"/></svg></a>
+        <a href="#" aria-label="Social profile"><svg width="17" height="17"><use href="#i-social-3"/></svg></a>
+        <a href="#" aria-label="Social profile"><svg width="17" height="17"><use href="#i-social-4"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="container gfooter-bottom">
+    <span>&copy; 1999–2026 Ministry of Culture, United Arab Emirates.</span>
   </div>
 </footer>
 

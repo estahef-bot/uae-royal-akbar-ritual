@@ -16,7 +16,7 @@ nav.main-nav a { font-size:12px; white-space:nowrap; }
 .hero { background:var(--paper-dim); }
 .hero::before,.hero::after { display:none; }
 .hero-inner { max-width:950px; padding-block:76px 88px; }
-.hero-emblem { width:88px; height:88px; object-fit:contain; margin:0 auto 28px; }
+.hero-emblem { display:block; width:480px; max-width:100%; height:auto; object-fit:contain; margin:0 auto 28px; filter:contrast(1.18); }
 .hero h1 { font-size:clamp(44px,6vw,78px); font-weight:500; letter-spacing:-.045em; }
 .hero .lede { font-style:normal; font-size:23px; }
 body:not(.gallery-page) section:not(.hero) { padding-block:88px; }

@@ -64,7 +64,7 @@ body:not(.gallery-page) section:not(.hero) { padding-block:88px; }
 .gpagination { padding-top:32px; }
 .gpage-nav,.gpage-numbers button { width:44px; height:44px; }
 .glb-content { grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr); }
-.glb-content img { object-fit:contain; background:#141b17; height: min(68vh,650px); }
+.glb-content img { object-fit:cover; background:#141b17; height: min(68vh,650px); }
 .glb-info { padding:28px; }
 .glb-info .slideshow-toggle { align-self:flex-start; }
 .glb-close { width:44px; height:44px; top:-52px; }
@@ -133,7 +133,7 @@ body:not(.gallery-page) section:not(.hero) { padding-block:88px; }
 .home-slide[hidden] { display:none; }
 .home-slide { position:relative; }
 .home-slide a { display:block; text-decoration:none; }
-.home-slide .g-photo { display:block; width:100%; height:clamp(280px,48vw,540px); object-fit:contain; }
+.home-slide .g-photo { display:block; width:100%; height:clamp(280px,48vw,540px); object-fit:cover; object-position:center; }
 .home-slide .g-caption { position:static; display:block; padding:16px 22px; background:var(--paper); color:var(--ink); text-align:left; }
 .home-slide-link { position:absolute; right:18px; bottom:74px; padding:12px 18px; border-radius:4px; background:#163f31; color:#fff; font:500 13px var(--sans); }
 .home-slide-controls { display:flex; gap:14px; align-items:center; padding:14px 20px; border-top:1px solid var(--border); font:12px var(--sans); }
@@ -150,3 +150,8 @@ body:not(.gallery-page) section:not(.hero) { padding-block:88px; }
 @media(max-width:600px) { .about-grid .figure { aspect-ratio:auto; width:100%; min-height:320px; } }
 body { overflow-x:clip; }
 @media(max-width:380px) { .nav-row { gap:10px; } .brand { gap:9px; min-width:0; } .brand-text .name { font-size:17px; } .nav-toggle { flex-shrink:0; } }
+
+/* Photographs fill their frames without stretching or spilling past corners. */
+.gcard-media img, .ghero-image img, .gallery-grid .g-photo, .glb-content img { object-fit:cover; object-position:center; display:block; }
+.home-slide-stage, .gcard-media, .ghero-image, .glb-content { overflow:hidden; }
+@media(max-width:960px) { .glb-content { overflow:auto; } }

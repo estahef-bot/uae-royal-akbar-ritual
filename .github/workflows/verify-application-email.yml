@@ -1,0 +1,104 @@
+name: Verify Akbar Application email
+
+# Manual only: run this from Actions > Verify Akbar Application email > Run workflow
+# after the RESEND_API_KEY repository secret has been added.
+on:
+  workflow_dispatch:
+    inputs:
+      send_test_email:
+        description: "Send a real test email to info@royalakbar.ae"
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  endpoint-tests:
+    name: Endpoint unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node --test "tests/*.test.mjs"
+
+  resend-check:
+    name: Resend key, domain and delivery
+    runs-on: ubuntu-latest
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      APPLICATION_TO_EMAIL: info@royalakbar.ae
+      APPLICATION_FROM_EMAIL: ${{ vars.APPLICATION_FROM_EMAIL || 'Royal Akbar Ritual <applications@royalakbar.ae>' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the API key
+        if: env.RESEND_API_KEY != ''
+        run: |
+          set -euo pipefail
+          status=$(curl -s -o /tmp/domains.json -w '%{http_code}' \
+            https://api.resend.com/domains \
+            -H "Authorization: Bearer $RESEND_API_KEY")
+          case "$status" in
+            200) echo "API key accepted (200)." ;;
+            401) echo "::error::Resend rejected the key (401). The RESEND_API_KEY secret is wrong, deleted, or belongs to another account."; exit 1 ;;
+            403) echo "::error::Resend refused the request (403). The key may lack sending permission."; exit 1 ;;
+            *) echo "::error::Unexpected response from Resend: HTTP $status"; exit 1 ;;
+          esac
+
+      - name: Check that the sending domain is verified
+        if: env.RESEND_API_KEY != ''
+        run: |
+          set -euo pipefail
+          from_domain=$(printf '%s' "$APPLICATION_FROM_EMAIL" | sed -n 's/.*@\([^> ]*\).*/\1/p')
+          echo "Sender domain in use: $from_domain"
+          jq -r '.data[]? | "\(.name)\t\(.status)"' /tmp/domains.json > /tmp/domain-list.tsv || true
+          if [ ! -s /tmp/domain-list.tsv ]; then
+            echo "::error::No domains are registered in this Resend account. Add $from_domain under Domains first."
+            exit 1
+          fi
+          echo "Domains in this Resend account:"
+          sed 's/^/  /' /tmp/domain-list.tsv
+          row=$(grep -P "^$from_domain\t" /tmp/domain-list.tsv || true)
+          if [ -z "$row" ]; then
+            echo "::error::$from_domain is not in this Resend account. Add and verify it, or set the APPLICATION_FROM_EMAIL repository variable to a verified sender."
+            exit 1
+          fi
+          state=$(printf '%s' "$row" | cut -f2)
+          echo "$from_domain status: $state"
+          if [ "$state" != "verified" ]; then
+            echo "::error::$from_domain is '$state', not 'verified'. Publish the SPF, DKIM and DMARC records shown in the Resend dashboard, then re-run."
+            exit 1
+          fi
+
+      - name: Send a test application email
+        if: env.RESEND_API_KEY != '' && inputs.send_test_email
+        run: |
+          set -euo pipefail
+          response=$(curl -s -w '\n%{http_code}' -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H 'Content-Type: application/json' \
+            -d "$(jq -n --arg from "$APPLICATION_FROM_EMAIL" --arg to "$APPLICATION_TO_EMAIL" '{
+              from: $from,
+              to: [$to],
+              subject: "Akbar Application — endpoint test",
+              reply_to: $to,
+              text: ("This is a test message from the Akbar Application endpoint check.\n\nIf you can read this, submissions from royalakbar.ae are being delivered to " + $to + ".")
+            }')")
+          status=$(printf '%s' "$response" | tail -n1)
+          body=$(printf '%s' "$response" | sed '$d')
+          if [ "$status" != "200" ]; then
+            echo "::error::Resend returned HTTP $status: $body"
+            exit 1
+          fi
+          echo "Test email accepted. Resend id: $(printf '%s' "$body" | jq -r '.id')"
+          echo "Check the $APPLICATION_TO_EMAIL inbox (and the spam folder)."
+
+      - name: No key configured
+        if: env.RESEND_API_KEY == ''
+        run: |
+          echo "::warning::RESEND_API_KEY is not set as a repository secret, so the live checks were skipped."
+          echo "Add it under Settings > Secrets and variables > Actions > New repository secret, then re-run this workflow."

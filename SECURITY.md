@@ -85,7 +85,12 @@ a normal form POST for browsers without JavaScript).
 ### Required configuration in Vercel
 
 Set these in the **royalakbar-deploy** project under *Settings > Environment
-Variables* (Production, and Preview if you test there):
+Variables* (Production, and Preview if you test there).
+
+> **Environment variables only apply to new deployments.** After saving a
+> variable, go to *Deployments → ⋯ → Redeploy* (or push a commit). Until you
+> redeploy, the live site keeps the old value and submissions keep failing with
+> `503`.
 
 | Variable | Required | Default |
 | --- | --- | --- |

@@ -324,6 +324,13 @@ async function handler(req, res) {
     await sendEmail(buildEmail(data, cfg), cfg.apiKey);
   } catch (err) {
     console.error('[application] delivery failed:', err.status, err.detail || err.message);
+    if (err.status === 401) {
+      console.error('[application] hint: RESEND_API_KEY is invalid, revoked, or from another account');
+    } else if (err.status === 403) {
+      console.error(
+        '[application] hint: the sending domain is not verified in Resend, or the key lacks sending permission',
+      );
+    }
     const status = err.status === 504 ? 504 : err.status === 429 ? 429 : 502;
     if (wantsJson) {
       sendJson(res, status, { ok: false, error: status === 429 ? 'rate_limited' : GENERIC_ERROR });

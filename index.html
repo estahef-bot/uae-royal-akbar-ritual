@@ -275,29 +275,34 @@
           <p data-i18n="contactBody">The UAE Cabinet may request further documentation on the Royal Akbar Ritual from
             the Ministry of Culture's Heritage Preservation Office.</p>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" action="/api/application" method="post">
           <div>
             <label for="fullname" data-i18n="labelFullName">Full Name</label>
-            <input id="fullname" type="text" data-i18n-placeholder="placeholderName" placeholder="Enter your name"
-              required>
+            <input id="fullname" name="name" type="text" data-i18n-placeholder="placeholderName"
+              placeholder="Enter your name" required>
           </div>
           <div>
             <label for="email" data-i18n="labelEmail">Email Address</label>
-            <input id="email" type="email" placeholder="name@example.com" required>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required>
           </div>
           <div>
             <label for="reason" data-i18n="labelReason">Reason for Enquiry</label>
-            <select id="reason">
-              <option data-i18n="optionAkbar">Akbar Application</option>
-              <option data-i18n="optionOther">Other</option>
+            <select id="reason" name="reason">
+              <option value="akbar-application" data-i18n="optionAkbar">Akbar Application</option>
+              <option value="other" data-i18n="optionOther">Other</option>
             </select>
           </div>
           <div>
             <label for="message" data-i18n="labelMessage">Message</label>
-            <textarea id="message" rows="3" data-i18n-placeholder="placeholderMessage"
+            <textarea id="message" name="message" rows="3" data-i18n-placeholder="placeholderMessage"
               placeholder="Tell us more..."></textarea>
           </div>
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
           <button type="submit" class="btn btn-primary" data-i18n="submitBtn">Submit Request</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </div>

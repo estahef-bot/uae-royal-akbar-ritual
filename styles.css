@@ -556,6 +556,37 @@ section.alt { background: var(--paper-dim); }
   justify-self: start;
 }
 .contact-form .btn-primary:hover { background: var(--gold); }
+.contact-form .btn-primary:disabled { opacity: 0.65; cursor: default; }
+
+/* Submission feedback: success and error states of the Akbar Application. */
+.contact-form .form-status {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+.contact-form .form-status--success {
+  background: rgba(228, 205, 151, 0.18);
+  border-color: rgba(228, 205, 151, 0.55);
+  color: var(--gold-light);
+}
+.contact-form .form-status--error {
+  background: rgba(179, 20, 28, 0.18);
+  border-color: rgba(179, 20, 28, 0.6);
+  color: #f3cfcf;
+}
+
+/* Honeypot: off-screen for people, still submitted by bots that fill every field. */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 /* ---------- Footer ---------- */
 footer.site-footer {
